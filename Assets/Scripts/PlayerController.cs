@@ -4,9 +4,11 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
+    [SerializeField] private float acceleration = 10f;
+    [SerializeField] private float deceleration = 15f;
 
     private Rigidbody2D rb;
-    private float horizontal;
+    private Vector2 moveInput;
 
     private void Start()
     {
@@ -15,7 +17,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        horizontal = InputSystem.actions.FindAction("Move").ReadValue<Vector2>().x;
+        moveInput = InputSystem.actions
+            .FindAction("Move")
+            .ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
@@ -25,6 +29,16 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+        Vector2 targetVelocity = moveInput * speed;
+
+        float rate = moveInput.sqrMagnitude > 0
+            ? acceleration
+            : deceleration;
+
+        rb.linearVelocity = Vector2.MoveTowards(
+            rb.linearVelocity,
+            targetVelocity,
+            rate * Time.fixedDeltaTime
+        );
     }
 }
