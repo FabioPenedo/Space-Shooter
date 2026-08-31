@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float acceleration = 10f;
     [SerializeField] private float deceleration = 15f;
+    [SerializeField] private GameObject shot;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -20,11 +21,21 @@ public class PlayerController : MonoBehaviour
         moveInput = InputSystem.actions
             .FindAction("Move")
             .ReadValue<Vector2>();
+
+        if (InputSystem.actions.FindAction("Attack").WasPressedThisFrame())
+        {
+            OnFire();
+        }
     }
 
     private void FixedUpdate()
     {
         Move();
+    }
+
+    private void OnFire()
+    {
+        Instantiate(shot, transform.position, Quaternion.identity);
     }
 
     private void Move()
