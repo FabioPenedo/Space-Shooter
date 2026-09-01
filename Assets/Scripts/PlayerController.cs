@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float acceleration = 10f;
     [SerializeField] private float deceleration = 15f;
     [SerializeField] private GameObject shot;
+    [SerializeField] private Transform posicaoTiro;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnFire()
     {
-        Instantiate(shot, transform.position, Quaternion.identity);
+        Instantiate(shot, posicaoTiro.position, Quaternion.identity);
     }
 
     private void Move()

@@ -8,6 +8,8 @@ public class Inimigo01Controller : MonoBehaviour
     [SerializeField] private float minFireInterval = 0.5f;
     [SerializeField] private float maxFireInterval = 2f;
 
+    [SerializeField] private Transform posicaoTiro;
+
     private Rigidbody2D rb;
     private Renderer enemyRenderer;
     private float fireTimer;
@@ -39,7 +41,7 @@ public class Inimigo01Controller : MonoBehaviour
 
     private void OnFire()
     {
-        Instantiate(shot, transform.position, Quaternion.identity);
+        Instantiate(shot, posicaoTiro.position, Quaternion.identity);
     }
 
     private float GetRandomFireInterval()
