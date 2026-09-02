@@ -3,6 +3,7 @@ using UnityEngine;
 public class Shot : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
+    [SerializeField] private int damage = 1;
 
     private Rigidbody2D rb;
 
@@ -24,7 +25,7 @@ public class Shot : MonoBehaviour
     {
         if (collision.CompareTag("Inimigo"))
         {
-            Destroy(collision.gameObject);
+            collision.GetComponent<Inimigo01Controller>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

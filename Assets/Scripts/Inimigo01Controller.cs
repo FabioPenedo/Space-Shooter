@@ -7,6 +7,7 @@ public class Inimigo01Controller : MonoBehaviour
 
     [SerializeField] private float minFireInterval = 0.5f;
     [SerializeField] private float maxFireInterval = 2f;
+    [SerializeField] private int life = 3;
 
     [SerializeField] private Transform posicaoTiro;
 
@@ -47,5 +48,14 @@ public class Inimigo01Controller : MonoBehaviour
     private float GetRandomFireInterval()
     {
         return Random.Range(minFireInterval, maxFireInterval);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        life -= damage;
+        if (life <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
