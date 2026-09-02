@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject shot;
     [SerializeField] private Transform posicaoTiro;
     [SerializeField] private int life = 5;
+    [SerializeField] private CameraShake cameraShake;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         life -= damage;
+        cameraShake.Shake();
         if (life <= 0)
         {
             Destroy(gameObject);
