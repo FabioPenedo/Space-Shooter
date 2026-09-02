@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 3124774821846300490}
   m_Layer: 7
   m_Name: Inimigo_01
-  m_TagString: Inimigo
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +84,7 @@ MonoBehaviour:
   shot: {fileID: 8511347582664136421, guid: cf908d3aad5886f47aafad20e7e8d414, type: 3}
   minFireInterval: 0.5
   maxFireInterval: 2
+  life: 3
   posicaoTiro: {fileID: 5646656935876967975}
 --- !u!50 &939804489548794838
 Rigidbody2D:

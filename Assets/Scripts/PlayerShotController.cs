@@ -23,7 +23,7 @@ public class Shot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Inimigo"))
+        if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<Inimigo01Controller>().TakeDamage(damage);
             Destroy(gameObject);

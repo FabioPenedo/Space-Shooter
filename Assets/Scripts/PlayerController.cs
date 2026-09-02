@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float deceleration = 15f;
     [SerializeField] private GameObject shot;
     [SerializeField] private Transform posicaoTiro;
+    [SerializeField] private int life = 5;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -52,5 +53,14 @@ public class PlayerController : MonoBehaviour
             targetVelocity,
             rate * Time.fixedDeltaTime
         );
+    }
+
+    public void TakeDamage(int damage)
+    {
+        life -= damage;
+        if (life <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
