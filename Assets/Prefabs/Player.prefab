@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1762471407321000774}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: posicao_tiro
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7062962713030176931}
   - component: {fileID: 145633598571162162}
   - component: {fileID: 4145747220854072219}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 7051375216089513725}
   - component: {fileID: 1534601687861925808}
   - component: {fileID: 143214641431834593}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: player_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

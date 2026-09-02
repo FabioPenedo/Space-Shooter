@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8768543302388623039}
   - component: {fileID: 3673360564463005839}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tiro_1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 5860461480754458202}
   - component: {fileID: 6600099702374797570}
   - component: {fileID: 761073117488909762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InimigoShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
