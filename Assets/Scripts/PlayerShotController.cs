@@ -4,6 +4,7 @@ public class Shot : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
     [SerializeField] private int damage = 1;
+    [SerializeField] private GameObject shotImpact; 
 
     private Rigidbody2D rb;
 
@@ -26,7 +27,10 @@ public class Shot : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<Inimigo01Controller>().TakeDamage(damage);
+
+            Instantiate(shotImpact, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
+
 }

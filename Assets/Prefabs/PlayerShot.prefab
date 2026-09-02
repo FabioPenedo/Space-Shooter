@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   speed: 10
+  damage: 1
+  shotImpact: {fileID: 8287955401037116799, guid: 986e78d643aca54478fd684b9f77863a, type: 3}
 --- !u!50 &8121064453180379536
 Rigidbody2D:
   serializedVersion: 5

@@ -27,5 +27,7 @@ public class InimigoShot : MonoBehaviour
             collision.GetComponent<PlayerController>().TakeDamage(damage);
             Destroy(gameObject);
         }
+
     }
+
 }
