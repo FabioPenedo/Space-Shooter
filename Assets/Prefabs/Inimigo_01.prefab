@@ -82,9 +82,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Inimigo01Controller
   speed: -3
   shot: {fileID: 8511347582664136421, guid: cf908d3aad5886f47aafad20e7e8d414, type: 3}
+  efeitoExplosao: {fileID: 1054768374967903600, guid: bc66ee0242164b44d93b3ea5f84b19ba, type: 3}
   minFireInterval: 0.5
   maxFireInterval: 2
-  life: 3
+  life: 1
   posicaoTiro: {fileID: 5646656935876967975}
 --- !u!50 &939804489548794838
 Rigidbody2D:

@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform posicaoTiro;
     [SerializeField] private int life = 5;
     [SerializeField] private CameraShake cameraShake;
+    [SerializeField] private GameObject efeitoExplosao;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -63,6 +64,7 @@ public class PlayerController : MonoBehaviour
         if (life <= 0)
         {
             Destroy(gameObject);
+            Instantiate(efeitoExplosao, transform.position, transform.rotation);
         }
     }
 }

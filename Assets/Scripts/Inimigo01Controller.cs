@@ -4,6 +4,7 @@ public class Inimigo01Controller : MonoBehaviour
 {
     [SerializeField] private float speed = -3f;
     [SerializeField] private GameObject shot;
+    [SerializeField] private GameObject efeitoExplosao;
 
     [SerializeField] private float minFireInterval = 0.5f;
     [SerializeField] private float maxFireInterval = 2f;
@@ -56,6 +57,7 @@ public class Inimigo01Controller : MonoBehaviour
         if (life <= 0)
         {
             Destroy(gameObject);
+            Instantiate(efeitoExplosao, transform.position, transform.rotation);
         }
     }
 }
