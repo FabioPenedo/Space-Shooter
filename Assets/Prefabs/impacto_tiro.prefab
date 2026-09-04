@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6398990607071192260}
   - component: {fileID: 9005655059185541753}
   - component: {fileID: 4778056811472597459}
+  - component: {fileID: 8210599376998355304}
   m_Layer: 0
   m_Name: impacto_tiro_0
   m_TagString: Untagged
@@ -114,6 +115,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8210599376998355304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6047495159803846849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f139a4adb5cc843b4fba46e2032642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EfeitoController
 --- !u!1 &8287955401037116799
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8202332060130695039}
+  - component: {fileID: 4147248055937362315}
   m_Layer: 0
   m_Name: impacto_tiro
   m_TagString: Untagged
@@ -146,3 +160,15 @@ Transform:
   - {fileID: 6398990607071192260}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4147248055937362315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8287955401037116799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f139a4adb5cc843b4fba46e2032642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EfeitoController
