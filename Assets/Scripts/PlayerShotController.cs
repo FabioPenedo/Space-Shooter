@@ -1,36 +1,28 @@
 using UnityEngine;
 
-public class Shot : MonoBehaviour
+public class PlayerShotController : ShotBaseController
 {
-    [SerializeField] private float speed = 10f;
-    [SerializeField] private int damage = 1;
-    [SerializeField] private GameObject shotImpact; 
+    [SerializeField] private GameObject shotImpact;
 
-    private Rigidbody2D rb;
-
-    void Start()
+    protected override void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = new Vector2(0f, speed);
+        speed = 10f;
+        base.Start();
     }
 
-    void Update()
+    protected override bool ShouldDestroy()
     {
-        if (transform.position.y > Camera.main.orthographicSize)
-        {
-            Destroy(gameObject);
-        }
+        return transform.position.y > Camera.main.orthographicSize;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnHit(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
-        {
-            collision.GetComponent<Inimigo01Controller>().TakeDamage(damage);
+        if (!collision.CompareTag("Enemy"))
+            return;
 
-            Instantiate(shotImpact, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
+        InimigoController enemy = collision.GetComponent<InimigoController>();
+        enemy.TakeDamage(damage);
+        Instantiate(shotImpact, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
-
 }

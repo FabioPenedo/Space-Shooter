@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Inimigo01Controller : MonoBehaviour
+public class InimigoController : MonoBehaviour
 {
     [SerializeField] private float speed = -3f;
     [SerializeField] private GameObject shot;
